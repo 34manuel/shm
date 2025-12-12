@@ -57,15 +57,45 @@
         }
 
         .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 1.5rem;
-            letter-spacing: 3px;
-            color: var(--blanco-puro);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             text-decoration: none;
         }
 
-        .logo span {
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--oro-sutil);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--negro-carbon);
+            letter-spacing: -1px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-text-top {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            color: var(--blanco-puro);
+        }
+
+        .logo-text-bottom {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: 2px;
             color: var(--oro-sutil);
         }
 
@@ -115,6 +145,59 @@
             max-width: 900px;
             position: relative;
             z-index: 1;
+        }
+
+        .hero-logo {
+            margin-bottom: 2rem;
+        }
+
+        .hero-logo-icon {
+            width: 120px;
+            height: 120px;
+            background-color: var(--oro-sutil);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 3.5rem;
+            color: var(--negro-carbon);
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero-logo-text-top {
+            color: var(--blanco-puro);
+            display: block;
+        }
+
+        .hero-logo-text-bottom {
+            color: var(--oro-sutil);
+            display: block;
+            margin-top: 0.3rem;
+        }
+
+        .hero-divider {
+            width: 200px;
+            height: 1px;
+            background-color: var(--gris-acero);
+            margin: 1.5rem auto 0.5rem;
+        }
+
+        .hero-tagline {
+            font-size: 0.75rem;
+            color: var(--gris-acero);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
         }
 
         .hero-badge {
@@ -459,9 +542,13 @@
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
             gap: 3rem;
             margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            grid-column: span 1;
         }
 
         .footer-section h4 {
@@ -487,7 +574,7 @@
         }
 
         .newsletter {
-            grid-column: span 2;
+            grid-column: span 1;
         }
 
         .newsletter input {
@@ -539,6 +626,12 @@
                 font-size: 1rem;
             }
 
+            .hero-logo-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 2.5rem;
+            }
+
             .section-title {
                 font-size: 2rem;
             }
@@ -557,6 +650,11 @@
                 grid-template-columns: 1fr;
             }
 
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand,
             .newsletter {
                 grid-column: span 1;
             }
@@ -567,7 +665,13 @@
     <!-- HEADER -->
     <header>
         <nav>
-            <a href="#" class="logo">HOMBRE<span>NÓMADA</span></a>
+            <a href="#" class="logo">
+                <div class="logo-icon">HN</div>
+                <div class="logo-text">
+                    <span class="logo-text-top">HOMBRE</span>
+                    <span class="logo-text-bottom">NÓMADA</span>
+                </div>
+            </a>
             <ul class="nav-links">
                 <li><a href="#categorias">Categorías</a></li>
                 <li><a href="#productos">Productos</a></li>
@@ -580,9 +684,16 @@
     <!-- HERO PRINCIPAL -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">HOMBRE NÓMADA</div>
-            <h1>Tecnología, Cuidado y Estilo</h1>
-            <p class="hero-subtitle">Para el hombre en movimiento</p>
+            <div class="hero-logo">
+                <div class="hero-logo-icon">HN</div>
+                <div class="hero-logo-text">
+                    <span class="hero-logo-text-top">HOMBRE</span>
+                    <span class="hero-logo-text-bottom">NÓMADA</span>
+                </div>
+                <div class="hero-divider"></div>
+                <div class="hero-tagline">Tecnología • Cuidado • Estilo</div>
+            </div>
+            <h1>Para el Hombre en Movimiento</h1>
             <p class="hero-description">
                 Productos inteligentes, prácticos y premium para mejorar tu día a día:
                 gadgets, movilidad, grooming, EDC y accesorios de carácter.
@@ -810,6 +921,20 @@
     <!-- FOOTER -->
     <footer id="contacto">
         <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="width: 60px; height: 60px; background-color: var(--oro-sutil); display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.8rem; color: var(--negro-carbon);">HN</div>
+                    <div>
+                        <div style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: 2px; color: var(--blanco-puro);">HOMBRE</div>
+                        <div style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: 2px; color: var(--oro-sutil);">NÓMADA</div>
+                    </div>
+                </div>
+                <p style="color: var(--gris-acero); font-size: 0.9rem; line-height: 1.6;">
+                    Presencia, utilidad y carácter.<br>
+                    Para el hombre que avanza.
+                </p>
+            </div>
+
             <div class="footer-section">
                 <h4>Sobre Nosotros</h4>
                 <ul>
